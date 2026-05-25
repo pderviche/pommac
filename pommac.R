@@ -395,7 +395,7 @@ pal <- c("Ba/Ca" = "#E41A1C",  # red
 # -----------------------------
 y_top <- max(left_limit, na.rm = TRUE) * 1.02
 
-ggplot() +
+gam <- ggplot() +
   # Observed points (NO legend)
   geom_point(
     data = data_long,
@@ -460,9 +460,8 @@ ggplot() +
     axis.title.y.right = element_text(margin = margin(l = 10))
   )
 
-
-
-
+gam
+ggsave("Figure 2.png", gam, width = 8, height = 5, dpi = 300, bg = "white")
 
 ###############################
 # END
