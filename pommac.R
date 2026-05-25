@@ -250,7 +250,7 @@ groups <- as.factor(data$Age[1:142])
 dim(data)
 
 # Figure
-fviz_pca_biplot(res.pca, 
+p <- fviz_pca_biplot(res.pca, 
                 col.ind = groups, 
                 addEllipses = TRUE, 
                 ellipse.type = "confidence",  ellipse.level = 0.95,
@@ -263,7 +263,9 @@ fviz_pca_biplot(res.pca,
                 title = " ")
 +  theme_light() 
 
+p
 
+ggsave("Figure 3.png", p, width = 5, height = 5, dpi = 300, bg = "white")
 
 ###############################
 # 7. Generalized Additive Model and 95% Bayesian confidence intervals
