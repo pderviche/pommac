@@ -204,7 +204,7 @@ pairwise.adonis(matrix_dist, data_group$Age_group, sim.method = "euclidean",
 ###
 
 # PCA
-res.pca <- PCA(data[, 2:4], graph = FALSE,    
+res.pca <- PCA(data_group[, 2:4], graph = FALSE,    
                scale.unit = TRUE,           
                ncp = 3)                    
 res.pca
@@ -235,7 +235,7 @@ fviz_pca_biplot(res.pca,
 ###
 
 # PCA
-data$Age <- as.numeric(data$Age)
+data$Age <- as.numeric(data_group$Age)
 
 res.pca <- PCA(data[, 2:4], graph = FALSE,    
                scale.unit = TRUE,           
